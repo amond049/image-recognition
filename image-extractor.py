@@ -17,15 +17,11 @@ for folder in class_folders:
     training_images = round(number_of_images * 0.8 * 0.8)
     validation_images = number_of_images - test_images - training_images
 
-
     for i in range(test_images):
         shutil.copy(os.path.join(folder_path, contents[i]), os.path.join(current_working_dir + "\\body-type-dataset\\test\\" + folder, contents[i]))
-    print("===========================")
     for i in range(test_images, training_images + test_images):
         shutil.copy(os.path.join(folder_path, contents[i]), os.path.join(current_working_dir + "\\body-type-dataset\\train\\" + folder, contents[i]))
-    print("===========================")
     for i in range(test_images + training_images, validation_images + test_images + training_images):
         shutil.copy(os.path.join(folder_path, contents[i]), os.path.join(current_working_dir + "\\body-type-dataset\\validation\\" + folder, contents[i]))
-    print("===========================")
 
 
